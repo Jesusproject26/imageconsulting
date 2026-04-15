@@ -15,6 +15,25 @@
       <p>Political Branding & Strategic Communications</p>
       <a href="#contact" class="btn-primary">Work With Us</a>
     </div>
+      <script>
+  const popup = document.getElementById("booking-popup");
+  const bookBtn = document.querySelector(".book-btn");
+  const closeBtn = document.querySelector(".close-popup");
+
+  bookBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    popup.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+</script>
+
 </section>
 
   </header>

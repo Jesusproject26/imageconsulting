@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civil Image Consulting – Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-container">
+    <h1>Analytics Dashboard</h1>
+    <p>Live overview of site engagement.</p>
+
+    <div class="dashboard-metrics">
+      <div class="metric-card">
+        <h3>Page Views</h3>
+        <p id="pageViews">0</p>
+      </div>
+      <div class="metric-card">
+        <h3>Messages Received</h3>
+        <p id="messagesReceived">0</p>
+      </div>
+    </div>
+
+    <div class="chart-wrapper">
+      <canvas id="engagementChart"></canvas>
+    </div>
+
+    <div class="messages-list">
+      <h3>Recent Messages</h3>
+      <ul id="messagesList"></ul>
+    </div>
+  </div>
+
+  <script>
+    async function loadAnalytics() {
+      const res = await fetch('/api/analytics');
+      const data = await res.json();
+
+      document.getElementById('pageViews').textContent = data.pageViews;
+      document.getElementById('messagesReceived').textContent = data.messagesReceived;
+
+      const ctx = document.getElementById('engagementChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Page Views', 'Messages'],
+          datasets: [{
+            label: 'Engagement',
+            data: [data.pageViews, data.messagesReceived],
+            backgroundColor: ['#0a3d62', '#006400']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+
+      const list = document.getElementById('messagesList');
+      list.innerHTML = '';
+      (data.lastMessages || []).forEach(msg => {
+        const li = document.createElement('li');
+        li.textContent = `${msg.date} – ${msg.name} (${msg.email}): ${msg.message}`;
+        list.appendChild(li);
+      });
+    }
+
+    loadAnalytics();
+    setInterval(loadAnalytics, 10000);
+  </script>
+</body>
+</html>

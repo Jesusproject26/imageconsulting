@@ -1,4 +1,13 @@
-/* Hero Banner */
+/* ===== Global Reset ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  background: #000;
+  color: #fff;
+}
+
+/* ===== Hero Banner ===== */
 .hero-banner {
   background-image: url('./images/hero-banner.jpg');
   background-size: cover;
@@ -31,7 +40,7 @@
   color: #ddd;
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .cta-button {
   background-color: #c49b3e;
   color: #fff;
@@ -62,7 +71,92 @@
   color: #fff;
 }
 
-/* Popup Overlay */
+/* ===== Services Section ===== */
+#services {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('./images/services-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #c49b3e;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+}
+
+.service-item {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ===== Contact Section ===== */
+#contact {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('./images/contact-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #c49b3e;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+              url('./images/footer-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+footer p {
+  margin: 0;
+  color: #ddd;
+}
+
+/* ===== Popup Booking Form ===== */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -76,7 +170,6 @@
   z-index: 9999;
 }
 
-/* Popup Box */
 .popup-content {
   background: #111;
   padding: 30px;
@@ -88,7 +181,6 @@
   position: relative;
 }
 
-/* Close Button */
 .close-popup {
   position: absolute;
   top: 10px;
@@ -98,7 +190,6 @@
   color: #fff;
 }
 
-/* Form Inputs */
 #booking-form input,
 #booking-form textarea {
   width: 100%;
@@ -110,7 +201,6 @@
   color: #fff;
 }
 
-/* Submit Button */
 .popup-btn {
   width: 100%;
   padding: 12px;

@@ -80,6 +80,22 @@
       </form>
       <p id="formStatus" class="form-status"></p>
     </section>
+    <!-- Popup Booking Form -->
+<div id="booking-popup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2>Book a Consultation</h2>
+
+    <form id="booking-form">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <textarea name="message" placeholder="Tell us about your needs..." required></textarea>
+
+      <button type="submit" class="popup-btn">Submit</button>
+    </form>
+  </div>
+</div>
   </main>
 
   <footer class="footer">

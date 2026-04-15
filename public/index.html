@@ -1,131 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Civil Image Consulting</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-banner">
+    <div class="hero-overlay">
       <h1>Civil Image Consulting</h1>
-      <p>Political Branding & Strategic Communications</p>
-      <a href="#contact" class="btn-primary">Work With Us</a>
+      <p>Building credible leadership brands across Africa and beyond.</p>
+      <a href="#services" class="cta-button">Explore Our Services</a>
+      <a href="#contact" class="book-btn">Book Consultation</a>
     </div>
-      <script>
-  const popup = document.getElementById("booking-popup");
-  const bookBtn = document.querySelector(".book-btn");
-  const closeBtn = document.querySelector(".close-popup");
+  </section>
 
-  bookBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    popup.style.display = "flex";
-  });
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Image Branding</li>
+      <li>Media Training</li>
+      <li>Digital Campaigns</li>
+      <li>Crisis Response</li>
+      <li>Reputation Repair</li>
+      <li>Monitoring & Insights</li>
+    </ul>
+  </section>
 
-  closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@civilimageconsulting.com</p>
+    <p>Phone: +234-XXX-XXX-XXXX</p>
+  </section>
 
-  window.addEventListener("click", (e) => {
-    if (e.target === popup) popup.style.display = "none";
-  });
-</script>
-
-</section>
-
-  </header>
-
-  <nav class="top-nav">
-    <div class="logo-text">CIVIL IMAGE</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <a href="/dashboard" target="_blank">Analytics</a>
-    </div>
-  </nav>
-
-  <main>
-    <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>
-        Civil Image Consulting is a strictly professional, nonpartisan political branding and communications firm.
-        We help leaders, candidates, and institutions build credible public images, manage narratives, and navigate
-        complex media environments across Nigeria and beyond.
-      </p>
-    </section>
-
-    <section id="services" class="section section-alt">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="card">
-          <h3>Image Branding</h3>
-          <p>Authentic political identities through visual design, messaging frameworks, and positioning strategies.</p>
-        </div>
-        <div class="card">
-          <h3>Media Training</h3>
-          <p>Interview, debate, and press conference coaching for confident, disciplined communication.</p>
-        </div>
-        <div class="card">
-          <h3>Digital Campaigns</h3>
-          <p>Data-driven social media campaigns, influencer partnerships, and grassroots digital mobilization.</p>
-        </div>
-        <div class="card">
-          <h3>Crisis Response</h3>
-          <p>Rapid, strategic communication to manage crises and protect reputations in real time.</p>
-        </div>
-        <div class="card">
-          <h3>Reputation Repair</h3>
-          <p>Long-term narrative rebuilding through community engagement and positive storytelling.</p>
-        </div>
-        <div class="card">
-          <h3>Monitoring & Insights</h3>
-          <p>Sentiment tracking, media monitoring, and analytics to guide smarter communication decisions.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact Us</h2>
-      <p>Share a few details and we’ll reach out to discuss how we can support your image and communications.</p>
-      <form id="contactForm" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-primary">Send Message</button>
+  <!-- Popup Booking Form -->
+  <div id="booking-popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <h2>Book a Consultation</h2>
+      <form id="booking-form">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" placeholder="Tell us about your needs..." required></textarea>
+        <button type="submit" class="popup-btn">Submit</button>
       </form>
-      <p id="formStatus" class="form-status"></p>
-    </section>
-    <!-- Popup Booking Form -->
-<div id="booking-popup" class="popup-overlay">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <h2>Book a Consultation</h2>
-
-    <form id="booking-form">
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="email" placeholder="Your Email Address" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-      <textarea name="message" placeholder="Tell us about your needs..." required></textarea>
-
-      <button type="submit" class="popup-btn">Submit</button>
-    </form>
+    </div>
   </div>
-</div>
-  </main>
 
-  <footer class="footer">
-    <p>© 2026 Civil Image Consulting | All Rights Reserved</p>
-    <p>
-      <a href="#" target="_blank">Facebook</a> |
-      <a href="#" target="_blank">Twitter</a> |
-      <a href="#" target="_blank">LinkedIn</a>
-    </p>
-  </footer>
+  <!-- Popup Logic -->
+  <script>
+    const popup = document.getElementById("booking-popup");
+    const bookBtn = document.querySelector(".book-btn");
+    const closeBtn = document.querySelector(".close-popup");
 
-  <script src="script.js"></script>
+    bookBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      popup.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === popup) popup.style.display = "none";
+    });
+  </script>
+
 </body>
 </html>
